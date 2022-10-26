@@ -220,8 +220,7 @@ SCHEDULER_NAME = "scheduler.pt"
 SCALER_NAME = "scaler.pt"
 
 def jin_pf_trace_handler(p):
-    print("=================Jin trace handler====================")
-    p.export_chrome_trace("/tmp/trace_" + str(p.step_num) + ".json")
+    p.export_chrome_trace("trace_" + str(p.step_num) + ".json")
 
 class Trainer:
     """
