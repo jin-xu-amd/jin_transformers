@@ -5,4 +5,4 @@ run_mlm.py  --model_name_or_path bert-large-uncased --dataset_name wikitext --da
 
 =============
 output trace*.json 
-will be saved in /tmp/ directory
+will be saved in transformer directory
