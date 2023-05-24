@@ -15,7 +15,7 @@
 # limitations under the License.
 """PyTorch BERT model."""
 
-
+import torch.autograd.profiler as profiler
 import math
 import os
 import warnings
@@ -290,6 +290,7 @@ class BertSelfAttention(nn.Module):
         past_key_value: Optional[Tuple[Tuple[torch.FloatTensor]]] = None,
         output_attentions: Optional[bool] = False,
     ) -> Tuple[torch.Tensor]:
+        with profiler.record_function("BertSelfAttention"):
         mixed_query_layer = self.query(hidden_states)
 
         # If this is instantiated as a cross-attention module, the keys
